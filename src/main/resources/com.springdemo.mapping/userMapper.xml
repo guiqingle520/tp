@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 为这个mapper指定一个唯一的namespace,namespace的值习惯上设置成包名+sql映射文件名，这样就能保证namespace的值是唯一的
+	例如namespace="com.springdemo.mapping.usermapping"就是com.springdemo.mapping(包名)+userMapper(userMapper.xml去除后缀)
+ -->
+ <mapper namespace="com.springdemo.mapping.userMapper">
+ 	<!-- 在select 标签中编写查询的sql语句，设置select 标签的id属性为getUser,id属性 值必须是唯一的，不能重复
+ 	使用parameterType属性指明查询时使用的参数类型，resultType属性指明查询返回的结果集类型
+ 	resultType="com.springdemo.model.User"就表示将查询结果封装成一个User类的对象返回
+ 	User类就是user表所对应的实体类-->
+ 
+ 	<select id="getUser" parameterType="String"
+ 		resultType="com.iis.web.user.entity.Tp_User">
+ 		select * from t_p_user
+ 	
+ 	</select>
+ 	
+ </mapper>
